@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function show()
-    {
-        return view('event-detail');
-    }
+   public function show($id)
+{
+    $event = \App\Models\Event::findOrFail($id);
+
+    return view('event-detail', compact('event'));
+}
 
     public function checkout()
     {

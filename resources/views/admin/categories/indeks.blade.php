@@ -4,9 +4,9 @@
 <div class="p-6">
     <h1 class="text-2xl font-bold mb-4">Manajemen Kategori</h1>
 
-    <button class="mb-4 px-4 py-2 bg-indigo-600 text-white rounded">
+    <a href="{{ route('categories.create') }}" class="mb-4 inline-block px-4 py-2 bg-indigo-600 text-white rounded">
         + Tambah Kategori
-    </button>
+    </a>
 
     <table class="w-full border">
         <thead class="bg-gray-100">
@@ -17,30 +17,30 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($categories as $category)
             <tr>
-                <td class="p-2">1</td>
-                <td class="p-2">Seminar</td>
+                <td class="p-2">{{ $loop->iteration }}</td>
+                <td class="p-2">{{ $category->name }}</td>
                 <td class="p-2">
-                    <button class="px-2 py-1 bg-yellow-400 rounded">Edit</button>
-                    <button class="px-2 py-1 bg-red-500 text-white rounded">Hapus</button>
+                    <a href="{{ route('categories.edit', $category->id) }}"
+                       class="px-2 py-1 bg-yellow-400 rounded">
+                        Edit
+                    </a>
+
+                    <form action="{{ route('categories.destroy', $category->id) }}"
+                          method="POST"
+                          class="inline"
+                          onsubmit="return confirm('Apakah anda yakin ingin menghapus kategori ini?')">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="px-2 py-1 bg-red-500 text-white rounded">
+                            Hapus
+                        </button>
+                    </form>
                 </td>
             </tr>
-            <tr>
-                <td class="p-2">2</td>
-                <td class="p-2">Konser</td>
-                <td class="p-2">
-                    <button class="px-2 py-1 bg-yellow-400 rounded">Edit</button>
-                    <button class="px-2 py-1 bg-red-500 text-white rounded">Hapus</button>
-                </td>
-            </tr>
-            <tr>
-                <td class="p-2">3</td>
-                <td class="p-2">Workshop</td>
-                <td class="p-2">
-                    <button class="px-2 py-1 bg-yellow-400 rounded">Edit</button>
-                    <button class="px-2 py-1 bg-red-500 text-white rounded">Hapus</button>
-                </td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

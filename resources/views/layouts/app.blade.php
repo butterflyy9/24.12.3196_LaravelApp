@@ -96,14 +96,34 @@
 
     <!-- Events Grid -->
     <section id="events" class="max-w-7xl mx-auto px-6 py-20">
-        <div class="flex justify-between items-end mb-12">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
             <div>
                 <h2 class="text-3xl font-extrabold mb-2">Event Terdekat</h2>
                 <p class="text-slate-500 font-medium">Jangan sampai ketinggalan acara seru minggu ini!</p>
             </div>
-            <div class="flex gap-2">
-                <button class="p-3 border rounded-xl hover:bg-white hover:shadow-md transition">Semua Kategori</button>
-            </div>
+           <div class="flex flex-wrap justify-center gap-4">
+
+    <!-- Semua -->
+    <a href="/"
+        class="px-5 py-3 bg-indigo-600 text-white rounded-xl font-semibold shadow hover:bg-indigo-700 transition duration-300">
+
+        Semua Kategori
+
+    </a>
+
+    <!-- Dynamic Category -->
+    @foreach($categories as $cat)
+
+        <a href="/?category={{ $cat->slug }}"
+            class="px-5 py-3 border border-indigo-200 bg-white text-indigo-600 rounded-xl font-semibold shadow-sm hover:bg-indigo-600 hover:text-white transition duration-300">
+
+            {{ $cat->name }}
+
+        </a>
+
+    @endforeach
+
+</div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -129,7 +149,7 @@
                     </div>
                     <div class="flex justify-between items-center pt-4 border-t">
                         <span class="text-2xl font-black text-indigo-600">Rp 150rb</span>
-                        <a href="event-detail.html"
+                        <a href="{{ route('event.detail', $event->id) }}"
                             class="px-5 py-2 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">Lihat
                             Detail</a>
                     </div>
@@ -158,7 +178,7 @@
                     </div>
                     <div class="flex justify-between items-center pt-4 border-t">
                         <span class="text-2xl font-black text-indigo-600">Rp 50rb</span>
-                        <a href="event-detail.html"
+                        <a href="{{ route('event.detail', $event->id) }}"
                             class="px-5 py-2 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">Lihat
                             Detail</a>
                     </div>
@@ -187,7 +207,7 @@
                     </div>
                     <div class="flex justify-between items-center pt-4 border-t">
                         <span class="text-2xl font-black text-indigo-600">Gratis</span>
-                        <a href="event-detail.html"
+                        <a href="{{ route('event.detail', $event->id) }}"
                             class="px-5 py-2 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">Lihat
                             Detail</a>
                     </div>
