@@ -5,31 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Partner;
 
 class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        // ambil semua kategori
         $categories = Category::all();
+        $partners = Partner::all();
 
-        // ambil event beserta category
-        $query = Event::with('category')
-                    ->where('date', '>=', now())
-                    ->orderBy('date', 'asc');
+        $events = Event::with('category')
+            ->when($request->category, function ($query, $category) {
+                $query->whereHas('category', function ($q) use ($category) {
+                    $q->where('slug', $category);
+                });
+            })
+            ->orderBy('date', 'asc')
+            ->get();
 
-        // filter kategori
-        if ($request->has('category') && $request->category != '') {
-
-            $query->whereHas('category', function ($q) use ($request) {
-                $q->where('slug', $request->category);
-            });
-        }
-
-        // ambil data event
-        $events = $query->get();
-
-        // kirim ke welcome.blade.php
-        return view('welcome', compact('events', 'categories'));
+        return view('welcome', compact(
+            'events',
+            'categories',
+            'partners'
+        ));
     }
 }
