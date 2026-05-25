@@ -15,7 +15,7 @@ class PartnerSeeder extends Seeder
         for ($i = 0; $i < 5; $i++) {
             DB::table('partners')->insert([
                 'name' => $faker->company,
-                'logo_url' => 'https://placehold.co/200x200',
+                'logo_url' => 'https://via.placeholder.com/150',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

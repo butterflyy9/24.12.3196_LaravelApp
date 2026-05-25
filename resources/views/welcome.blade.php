@@ -49,25 +49,23 @@
 
     <div
         class="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition duration-300">
+<!-- IMAGE -->
+<div class="relative overflow-hidden h-[420px]">
 
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden h-[420px]">
+    <img
+    src="{{ asset('storage/' . $event->poster_path) }}"
+    alt="{{ $event->title }}"
+    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
 
-            <img
-                src="{{ asset('storage/' . $event->image) }}"
-                alt="{{ $event->title }}"
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+    <!-- CATEGORY BADGE -->
+    <div
+        class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold uppercase text-indigo-600 shadow">
 
-            <!-- CATEGORY BADGE -->
-            <div
-                class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold uppercase text-indigo-600 shadow">
+        {{ $event->category->name }}
 
-                {{ $event->category->name }}
+    </div>
 
-            </div>
-
-        </div>
-
+</div>
         <!-- CONTENT -->
         <div class="p-6">
 

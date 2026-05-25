@@ -5,249 +5,347 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AmikomEventHub - Temukan Event Seru!</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
         }
     </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900">
 
-    <!-- Navigation -->
+    <!-- NAVBAR -->
     <nav
-        class="glass sticky top-8 z-40 mx-4 mt-4 px-6 py-4 rounded-2xl border border-white/20 shadow-lg flex justify-between items-center">
-        <div class="flex items-center gap-2">
+        class="glass sticky top-6 z-50 max-w-7xl mx-auto mt-6 px-8 py-5 rounded-3xl border border-white/30 shadow-lg flex justify-between items-center">
+
+        <div class="flex items-center gap-3">
+
             <div
-                class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                AH</div>
-            <span class="text-xl font-bold tracking-tight">AmikomEventHub</span>
+                class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-md">
+
+                AH
+
+            </div>
+
+            <span class="text-3xl font-extrabold tracking-tight">
+                AmikomEventHub
+            </span>
+
         </div>
-        <div class="hidden md:flex gap-8 font-medium">
-            <a href="#" class="text-indigo-600">Jelajahi</a>
-            <a href="#" class="hover:text-indigo-600 transition">Kategori</a>
-            <a href="#" class="hover:text-indigo-600 transition">Tentang Kami</a>
+
+        <div class="hidden md:flex gap-10 font-semibold text-lg">
+
+            <a href="#" class="text-indigo-600">
+                Jelajahi
+            </a>
+
+            <a href="#" class="hover:text-indigo-600 transition">
+                Kategori
+            </a>
+
+            <a href="#" class="hover:text-indigo-600 transition">
+                Tentang Kami
+            </a>
+
         </div>
-        <!-- <div class="flex gap-3">
-            <button class="px-5 py-2.5 rounded-xl font-semibold hover:bg-slate-200 transition">Login</button>
-            <button
-                class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition">Daftar</button>
-        </div> -->
+
     </nav>
 
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
-        <div class="flex-1 space-y-8">
+    <!-- HERO -->
+    <section
+        class="max-w-7xl mx-auto px-6 pt-24 pb-20 flex flex-col lg:flex-row items-center gap-16">
+
+        <!-- LEFT -->
+        <div class="flex-1">
+
             <span
-                class="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-bold uppercase tracking-wider">#1
-                Event Platform</span>
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
-                Temukan & Pesan <span class="text-indigo-600">Tiket Event</span> Impianmu.
+                class="inline-block px-5 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-bold uppercase tracking-widest mb-8">
+
+                #1 Event Platform
+
+            </span>
+
+            <h1
+                class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
+
+                Temukan &
+                <span class="text-indigo-600">
+                    Pesan Tiket
+                </span>
+                Event Impianmu.
+
             </h1>
-            <p class="text-lg text-slate-500 max-w-lg leading-relaxed">
-                Dari konser musik hingga workshop teknologi, semua ada di genggamanmu. Pesan aman & cepat dengan
-                Midtrans.
+
+            <p
+                class="text-xl text-slate-500 leading-relaxed max-w-2xl mb-10">
+
+                Dari konser musik hingga workshop teknologi,
+                semua event terbaik tersedia hanya dalam satu platform.
+
             </p>
-            <div class="flex gap-4">
-                <a href="#events"
-                    class="px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-indigo-200 hover:scale-105 transition-transform">
-                    Mulai Jelajah
-                </a>
-                <a href="#"
-                    class="px-8 py-4 border-2 border-slate-200 rounded-2xl font-bold text-lg hover:border-indigo-600 hover:text-indigo-600 transition">
-                    Cara Pesan
-                </a>
-            </div>
-        </div>
-        <div class="flex-1 relative">
-            <div
-                class="absolute -top-10 -left-10 w-64 h-64 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
-            </div>
-            <div
-                class="absolute -bottom-10 -right-10 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
-            </div>
-            <img src="assets/concert.png" alt="Concert"
-                class="rounded-[2rem] shadow-2xl relative z-10 w-full object-cover aspect-[4/5] object-center">
 
-            <div class="absolute -bottom-6 -left-6 glass p-6 rounded-2xl shadow-xl z-20 border border-white">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+            <a href="#events"
+                class="inline-block px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-indigo-200 hover:scale-105 transition duration-300">
+
+                Mulai Jelajah
+
+            </a>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex-1">
+
+            <img src="{{ asset('assets/concert.png') }}"
+                alt="Concert"
+                class="w-full rounded-[2.5rem] shadow-2xl object-cover aspect-[4/5]">
+
+        </div>
+
+    </section>
+
+    <!-- PARTNER SECTION -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="text-center mb-14">
+
+            <h2
+                class="text-4xl md:text-5xl font-extrabold text-indigo-600 mb-4">
+
+                Partner AmikomEventHub
+
+            </h2>
+
+            <p class="text-slate-500 text-lg">
+
+                Partner terpercaya yang menghadirkan event-event berkualitas.
+
+            </p>
+
+        </div>
+
+        <!-- PARTNER GRID -->
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+            @foreach($partners as $partner)
+
+            <div
+                class="bg-white rounded-3xl shadow-md hover:shadow-2xl transition duration-300 p-8 text-center">
+
+                <img src="{{ $partner->logo_url }}"
+                    alt="{{ $partner->name }}"
+                    class="w-20 h-20 rounded object-contain bg-white p-2">
+
+                <h3 class="text-2xl font-bold text-slate-800">
+
+                    {{ $partner->name }}
+
+                </h3>
+
+            </div>
+
+            @endforeach
+
+        </div>
+
+    </section>
+
+    <!-- KATEGORI -->
+    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200">
+
+        <div class="text-center mb-12">
+
+            <h2
+                class="text-4xl md:text-5xl font-extrabold text-indigo-600 mb-4">
+
+                Semua Kategori
+
+            </h2>
+
+            <p class="text-slate-500 text-lg">
+
+                Temukan berbagai event menarik sesuai minat Anda.
+
+            </p>
+
+        </div>
+
+        <!-- FILTER BUTTON -->
+        <div class="flex flex-wrap justify-center gap-5">
+
+            <!-- SEMUA -->
+            <a href="/"
+                class="px-7 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:scale-105 transition">
+
+                Semua Kategori
+
+            </a>
+
+            <!-- CATEGORY -->
+            @foreach($categories as $cat)
+
+            <a href="/?category={{ $cat->slug }}"
+                class="px-7 py-4 bg-white border-2 border-indigo-100 text-indigo-600 rounded-2xl font-bold text-lg hover:bg-indigo-600 hover:text-white transition duration-300">
+
+                {{ $cat->name }}
+
+            </a>
+
+            @endforeach
+
+        </div>
+
+    </section>
+
+    <!-- EVENT -->
+    <section id="events" class="max-w-7xl mx-auto px-6 pb-24">
+
+        <div class="mb-14">
+
+            <h2 class="text-4xl font-extrabold mb-3">
+
+                Event Terdekat
+
+            </h2>
+
+            <p class="text-slate-500 text-lg">
+
+                Jangan sampai ketinggalan acara seru minggu ini!
+
+            </p>
+
+        </div>
+
+        <!-- GRID -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            @foreach($events as $event)
+
+            <div
+                class="group bg-white rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
+
+                <!-- IMAGE -->
+                <div class="relative overflow-hidden aspect-[3/4]">
+
+                    <img src="{{ asset('storage/' . $event->poster_path) }}"
+                        alt="{{ $event->title }}"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                    <!-- CATEGORY -->
+                    <div
+                        class="absolute top-5 left-5 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-extrabold uppercase text-indigo-600">
+
+                        {{ $event->category->name }}
+
+                    </div>
+
+                </div>
+
+                <!-- CONTENT -->
+                <div class="p-7">
+
+                    <h3
+                        class="text-2xl font-extrabold mb-4 group-hover:text-indigo-600 transition">
+
+                        {{ $event->title }}
+
+                    </h3>
+
+                    <!-- DATE -->
+                    <div
+                        class="flex items-center gap-2 text-slate-500 mb-6">
+
+                        <svg class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10m-11 9h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v11a2 2 0 002 2z">
                             </path>
+
                         </svg>
+
+                        <span class="font-medium">
+
+                            {{ \Carbon\Carbon::parse($event->date)->format('d M Y') }}
+
+                        </span>
+
                     </div>
-                    <div>
-                        <p class="text-xs text-slate-500 font-bold uppercase">Terverifikasi</p>
-                        <p class="font-bold">Pembayaran Aman via Midtrans</p>
+
+                    <!-- PRICE -->
+                    <div
+                        class="flex justify-between items-center pt-5 border-t">
+
+                        <span
+                            class="text-2xl font-black text-indigo-600">
+
+                            Rp {{ number_format($event->price, 0, ',', '.') }}
+
+                        </span>
+
+                        <a href="{{ route('event.detail', $event->id) }}"
+                            class="px-5 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">
+
+                            Detail
+
+                        </a>
+
                     </div>
+
                 </div>
+
             </div>
+
+            @endforeach
+
         </div>
+
     </section>
 
-    <!-- Events Grid -->
-    <section id="events" class="max-w-7xl mx-auto px-6 py-20">
-        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
-            <div>
-                <h2 class="text-3xl font-extrabold mb-2">Event Terdekat</h2>
-                <p class="text-slate-500 font-medium">Jangan sampai ketinggalan acara seru minggu ini!</p>
+    <!-- FOOTER -->
+    <footer
+        class="bg-indigo-900 text-white py-20 px-6 mt-10">
+
+        <div class="max-w-7xl mx-auto text-center">
+
+            <h3 class="text-3xl font-extrabold mb-4">
+
+                AmikomEventHub
+
+            </h3>
+
+            <p class="text-indigo-200 text-lg">
+
+                Platform reservasi tiket event online terbaik.
+
+            </p>
+
+            <div class="mt-8 text-indigo-300">
+
+                © 2026 AmikomEventHub.
+                Built with Laravel & Tailwind CSS.
+
             </div>
-           <div class="flex flex-wrap justify-center gap-4">
 
-    <!-- Semua -->
-    <a href="/"
-        class="px-5 py-3 bg-indigo-600 text-white rounded-xl font-semibold shadow hover:bg-indigo-700 transition duration-300">
-
-        Semua Kategori
-
-    </a>
-
-    <!-- Dynamic Category -->
-    @foreach($categories as $cat)
-
-        <a href="/?category={{ $cat->slug }}"
-            class="px-5 py-3 border border-indigo-200 bg-white text-indigo-600 rounded-xl font-semibold shadow-sm hover:bg-indigo-600 hover:text-white transition duration-300">
-
-            {{ $cat->name }}
-
-        </a>
-
-    @endforeach
-
-</div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Event Card 1 -->
-            <div
-                class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                <div class="relative overflow-hidden aspect-[3/4]">
-                    <img src="assets/concert.png" alt="Jazz Night"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-lg text-xs font-bold uppercase text-indigo-600">
-                        Musik</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600 transition">Jazz Night 2024: A
-                        Celebration</h3>
-                    <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span>16 November 2024, 19:30</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t">
-                        <span class="text-2xl font-black text-indigo-600">Rp 150rb</span>
-                        <a href="{{ route('event.detail', $event->id) }}"
-                            class="px-5 py-2 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">Lihat
-                            Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event Card 2 -->
-            <div
-                class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                <div class="relative overflow-hidden aspect-[3/4]">
-                    <img src="assets/workshop.png" alt="AI & Future"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-lg text-xs font-bold uppercase text-indigo-600">
-                        Technology</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600 transition">AI & Future: Unleash The
-                        Power</h3>
-                    <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span>26 October 2024, 09:00</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t">
-                        <span class="text-2xl font-black text-indigo-600">Rp 50rb</span>
-                        <a href="{{ route('event.detail', $event->id) }}"
-                            class="px-5 py-2 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">Lihat
-                            Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event Card 3 -->
-            <div
-                class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                <div class="relative overflow-hidden aspect-[3/4]">
-                    <img src="assets/hackathon.png" alt="Hackathon 2024"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-lg text-xs font-bold uppercase text-indigo-600">
-                        Coding</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600 transition">Hackathon 2024: Ultimate
-                        Marathon</h3>
-                    <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span>18-20 October 2024</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t">
-                        <span class="text-2xl font-black text-indigo-600">Gratis</span>
-                        <a href="{{ route('event.detail', $event->id) }}"
-                            class="px-5 py-2 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">Lihat
-                            Detail</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-indigo-900 text-indigo-100 py-20 px-6 mt-20">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="space-y-4 col-span-2">
-                <div class="flex items-center gap-2">
-                    <div
-                        class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-900 font-bold text-xl">
-                        AH</div>
-                    <span class="text-2xl font-bold text-white">AmikomEventHub</span>
-                </div>
-                <p class="max-w-xs text-indigo-300">Platform reservasi tiket event online terbaik untuk mahasiswa dan
-                    penyelenggara profesional.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Navigasi</h4>
-                <ul class="space-y-4">
-                    <li><a href="#" class="hover:text-white transition">Home</a></li>
-                    <li><a href="#" class="hover:text-white transition">Semua Event</a></li>
-                    <li><a href="#" class="hover:text-white transition">Cara Bayar</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Hubungi Kami</h4>
-                <ul class="space-y-4">
-                    <li>support@eventtiket.com</li>
-                    <li>+62 812 3456 7890</li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-indigo-800 text-center text-indigo-400 text-sm">
-            &copy; 2024 AmikomEventHub. Built with Laravel & Tailwind CSS.
-        </div>
     </footer>
 
 </body>

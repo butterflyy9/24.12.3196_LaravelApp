@@ -8,6 +8,8 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        return view('admin.transactions.index');
+        $categories = [];
+
+        return view('admin.transactions', compact('categories'));
     }
 }
