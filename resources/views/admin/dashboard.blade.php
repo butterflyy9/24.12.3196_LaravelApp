@@ -3,9 +3,25 @@
 @section('content')
 
 <!-- Header -->
-<div class="mb-10">
-    <h1 class="text-3xl font-black">Dashboard Ringkasan</h1>
-    <p class="text-slate-500 font-medium">Selamat datang kembali, Admin!</p>
+<div class="mb-10 flex justify-between items-center">
+
+    <div>
+        <h1 class="text-3xl font-black">Dashboard Ringkasan</h1>
+        <p class="text-slate-500 font-medium">
+            Selamat datang kembali, Admin!
+        </p>
+    </div>
+
+    <form action="{{ route('admin.logout') }}" method="POST">
+        @csrf
+
+        <button
+            type="submit"
+            class="bg-red-600 text-white px-5 py-2 rounded-xl font-semibold hover:bg-red-700 transition">
+            Logout
+        </button>
+         </form>
+
 </div>
 
 <!-- Stats Grid -->
