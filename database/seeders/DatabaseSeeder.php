@@ -8,15 +8,14 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Akun Admin Utama
         \App\Models\User::firstOrCreate(
-            ['email' => 'admin@amikom.ac.id'],
-            [
-                'name' => 'Admin Amikom',
-                'password' => bcrypt('password'),
-            ]
-        );
-
+    ['email' => 'admin@amikom.ac.id'],
+    [
+        'name' => 'Admin Amikom',
+        'password' => bcrypt('password'),
+        'role' => 'admin',
+    ]
+);
         // 2. Kategori
         $cat1 = \App\Models\Category::firstOrCreate(
             ['slug' => 'seminar-it'],
