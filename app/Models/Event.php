@@ -17,6 +17,10 @@ class Event extends Model
         'poster_path'
     ];
 
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
     // Relasi belongsTo ke model Category
     public function category()
     {

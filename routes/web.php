@@ -11,6 +11,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\Admin\TransactionController as AdminTransactionController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -19,12 +20,15 @@ Route::get('/events/{event}', [EventController::class, 'show'])
     ->name('events.show');
 
 // Halaman checkout
-Route::get('/checkout', [CheckoutController::class, 'index'])
-    ->name('checkout');
+Route::get('/checkout/{event}', [CheckoutController::class, 'create'])
+    ->name('checkout.create');
 
 // Proses checkout
-Route::post('/checkout/store', [CheckoutController::class, 'store'])
+Route::post('/checkout/{event}', [CheckoutController::class, 'store'])
     ->name('checkout.store');
+
+Route::get('/ticket/{transaction}', [TicketController::class, 'show'])
+    ->name('ticket.show');
 
 // Halaman tiket
 Route::get('/ticket', [TicketController::class, 'index'])
@@ -114,7 +118,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('events', AdminEventController::class);
 
-        Route::get('/transactions', [TransactionController::class, 'index'])
-            ->name('transactions.index');
+        Route::get('/transactions', [AdminTransactionController::class, 'index'])
+        ->name('transactions.index');
     });
 });
