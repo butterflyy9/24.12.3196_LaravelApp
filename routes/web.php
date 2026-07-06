@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\TransactionController as AdminTransactionController;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Halaman detail event
 Route::get('/events/{event}', [EventController::class, 'show'])
@@ -26,6 +26,13 @@ Route::get('/checkout/{event}', [CheckoutController::class, 'create'])
 // Proses checkout
 Route::post('/checkout/{event}', [CheckoutController::class, 'store'])
     ->name('checkout.store');
+
+// Halaman pembayaran Midtrans
+Route::get('/payment/{order_id}', [CheckoutController::class, 'payment'])
+    ->name('checkout.payment');
+
+Route::get('/success/{order_id}', [CheckoutController::class, 'success'])
+    ->name('checkout.success');
 
 Route::get('/ticket/{transaction}', [TicketController::class, 'show'])
     ->name('ticket.show');
