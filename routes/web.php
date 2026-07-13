@@ -128,4 +128,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/transactions', [AdminTransactionController::class, 'index'])
         ->name('transactions.index');
     });
+    Route::post('/midtrans/callback',
+[\App\Http\Controllers\MidtransWebhookController::class, 'handle']);
 });
